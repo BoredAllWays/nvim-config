@@ -27,7 +27,7 @@ return {
 				},
 				["prettier"] = {
 					-- Tell prettier to drop the 2-space rule and use 4
-					prepend_args = { "--tab-width", "4" },
+					prepend_args = { "--tab-width", "2" },
 				},
 			},
 		},
