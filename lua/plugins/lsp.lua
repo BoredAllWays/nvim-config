@@ -7,21 +7,18 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "pyright", "clangd", "ts_ls" },
+				ensure_installed = { "pyright", "clangd", "ts_ls", "emmet_ls" },
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			-- The new, non-deprecated way to register servers in nvim-lspconfig 0.11+
-			local servers = { "pyright", "clangd", "ts_ls" }
+			local servers = { "pyright", "clangd", "ts_ls", "emmet_ls" }
 
 			for _, server in ipairs(servers) do
-				-- 1. Grab the server defaults from the plugin's new native configuration registry
 				local config = vim.lsp.config[server]
 
-				-- 2. If it exists, natively enable it into your Neovim workspace
 				if config then
 					vim.lsp.enable(server)
 				end
